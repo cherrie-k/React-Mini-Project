@@ -6,8 +6,8 @@ class ContactDetails extends Component {
   render() {
     const details = (
       <div>
-        <p>{this.props.contact.name}</p>
-        <p>{this.props.contact.phone}</p>
+        <p>Name: {this.props.contact.name}</p>
+        <p>Number: {this.props.contact.phone}</p>
       </div>
     );
     const black = <div>Not Selected</div>;
