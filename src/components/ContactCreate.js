@@ -12,6 +12,7 @@ class ContactCreate extends Component {
     // 임의 메소드를 만들었으니 바인딩 해줘야함!! 그리고 이걸 onChange 이벤트에 연결.
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   // 여러개의 input을 처리하는 handleChange
@@ -35,6 +36,12 @@ class ContactCreate extends Component {
     });
   }
 
+  handleKeyPress(e) {
+    if (e.key === "Enter") {
+      this.handleClick();
+    }
+  }
+
   render() {
     return (
       <div>
@@ -53,6 +60,7 @@ class ContactCreate extends Component {
             placeholder="phone number"
             value={this.state.phone}
             onChange={this.handleChange}
+            onKeyPress={this.handleKeyPress}
           />
         </p>
         <button onClick={this.handleClick}>Create</button>
