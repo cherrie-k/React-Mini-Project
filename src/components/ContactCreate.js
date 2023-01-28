@@ -34,6 +34,9 @@ class ContactCreate extends Component {
       name: "",
       phone: "",
     });
+
+    // 얠 통해서 인풋에 포커스 둠.
+    this.nameInput.focus();
   }
 
   handleKeyPress(e) {
@@ -45,14 +48,20 @@ class ContactCreate extends Component {
   render() {
     return (
       <div>
-        <h2>Create Contacts</h2>
+        <h2>Create Contact</h2>
         <p>
+          {/*밑에서 ref가 있는 코드 덕분에.. 정보 입력 후 제출이 끝나도 마우스 포인터표시? 포커스가 여전히 input 박스 안에 있을 수 있다. \
+            즉, 데이터 추가 후 특정 인풋에 focus를 줄 수 있다.  
+          */}
           <input
             type="text"
             name="name"
             placeholder="name"
             value={this.state.name}
             onChange={this.handleChange}
+            ref={(ref) => {
+              this.nameInput = ref;
+            }}
           />
           <input
             type="text"
