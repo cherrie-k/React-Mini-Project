@@ -17,6 +17,7 @@ class ContactDetails extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    //this.handleClear = this.handleClear.bind(this);
   }
 
   handleToggle() {
@@ -55,6 +56,8 @@ class ContactDetails extends Component {
       this.handleToggle();
     }
   }
+
+  handleClear;
 
   render() {
     const details = (

@@ -47,6 +47,28 @@ export default class Contact extends React.Component {
     this.handleEdit = this.handleEdit.bind(this);
   }
 
+  // 컴포넌트가 DOM 위에 마운트 되기 전에 실행되는 코드
+  componentWillMount() {
+    // 컴포넌트가 가장 처음 그리기 전에 contact data 값이 로컬스토리지 안에 존재한다면 setState를 통해 저장된 값을 불러오게 함.
+    const contactData = localStorage.contactData;
+
+    if (contactData) {
+      this.setState({
+        contactData: JSON.parse(contactData),
+      });
+    }
+  }
+
+  // 컴포넌트의 state가 실행될때마다 업데이트 되는 API
+  componentDidUpdate(prevProps, prevState) {
+    if (
+      JSON.stringify(prevState.contactData) !==
+      JSON.stringify(this.state.contactData)
+    ) {
+      localStorage.contactData = JSON.stringify(this.state.contactData);
+    }
+  }
+
   // input 란에 값이 들어 왔을 때 그걸 어떻게 처리해줄지 설정
   handleChange(e) {
     this.setState({
