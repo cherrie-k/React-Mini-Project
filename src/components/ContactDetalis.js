@@ -17,7 +17,7 @@ class ContactDetails extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
-    //this.handleClear = this.handleClear.bind(this);
+    //this.handleClear = this.handleClear.bind(this); (추후 시간 나면 구현 )
   }
 
   handleToggle() {
