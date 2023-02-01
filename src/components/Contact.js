@@ -34,6 +34,10 @@ export default class Contact extends React.Component {
           name: "Kerry",
           phone: "010-0000-0005",
         },
+        {
+          name: "Perry",
+          phone: "010-0000-0006",
+        },
       ],
     };
 
@@ -143,6 +147,7 @@ export default class Contact extends React.Component {
 
     return (
       <div>
+        <h1>Terrrrrrrrible CSS right now!!!!!!!!!</h1>
         <h1>Contacts</h1>
 
         <input
