@@ -1,15 +1,18 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.css";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./components/App";
-
+// import "bootstrap/dist/css/bootstrap.css";
 import reportWebVitals from "./reportWebVitals";
+import "./index.css";
+// browser를 위한 router를 임포트해옴. 이거로 App 컴포넌트 통으로 감싸주기.
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
