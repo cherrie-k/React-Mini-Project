@@ -3,12 +3,22 @@ import Contact from "./Contact";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import About from "./About";
+import TodoTemplateBlock from "./TodoTemplate";
 // routes들을 정의하고 그룹하게 도와주는 애들.
 import { Route, Routes } from "react-router-dom";
+import { createGlobalStyle } from "styled-components";
 
 //import "./App.css";
 
+// 글로벌 스타일로 페이지 전체 설정 가능
+const GlobalStyle = createGlobalStyle`{
+  body{
+    background: pink;
+  }
+}`;
+
 function App() {
+  // 하단처럼 switch를 설정한 routing도 가능하긴 하지만, react route를 사용하자!
   /*
   let component;
   switch (window.location.pathname) {
@@ -33,9 +43,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contacts" element={<Contact />} />
+          <Route
+            path="/todo"
+            element={<TodoTemplateBlock>This Will be To Do </TodoTemplateBlock>}
+          />
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
+      <GlobalStyle />
     </>
   );
   //return <Contact />;

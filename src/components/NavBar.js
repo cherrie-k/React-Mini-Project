@@ -11,6 +11,7 @@ function NavBar() {
       </Link>
       <ul>
         <CustomLink to="/contacts">Contacts</CustomLink>
+        <CustomLink to="/todo">Todo List</CustomLink>
         <CustomLink to="/about">About</CustomLink>
       </ul>
     </nav>

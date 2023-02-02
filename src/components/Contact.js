@@ -54,6 +54,7 @@ export default class Contact extends React.Component {
   // 컴포넌트가 DOM 위에 마운트 되기 전에 실행되는 코드
   componentWillMount() {
     // 컴포넌트가 가장 처음 그리기 전에 contact data 값이 로컬스토리지 안에 존재한다면 setState를 통해 저장된 값을 불러오게 함.
+    // 이거 지우려면 콘솔에 localStorage.clear(); 해주면 된다 !
     const contactData = localStorage.contactData;
 
     if (contactData) {
