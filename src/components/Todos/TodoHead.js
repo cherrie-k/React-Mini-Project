@@ -34,12 +34,22 @@ const TodoHeadBlock = styled.div`
 
 function TodoHead() {
   const todos = useTodoState();
-  console.log(todos);
+  // 할 일 몇개 끝났는지 렌더링해주기 위한 변수
+  const undoneTasks = todos.filter((todo) => !todo.done);
+
+  const today = new Date();
+  const dateString = today.toLocaleDateString("ko-KR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  const dayName = today.toLocaleDateString("ko-KR", { weekday: "long" });
+
   return (
     <TodoHeadBlock>
-      <h1>2023년 02월 04일</h1>
-      <div className="day"> 토요일</div>
-      <div className="tasks-left">할 일 150개 남음ㅠ</div>
+      <h1>{dateString}</h1>
+      <div className="day">{dayName}</div>
+      <div className="tasks-left">할 일 {undoneTasks.length}개 남음 !</div>
     </TodoHeadBlock>
   );
 }
