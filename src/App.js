@@ -1,9 +1,11 @@
 import React from "react";
-import Contact from "./Contact";
-import NavBar from "./NavBar";
-import Home from "./Home";
-import About from "./About";
-import TodoTemplateBlock from "./TodoTemplate";
+import Contact from "./components/Contact";
+import NavBar from "./components/NavBar";
+import Home from "./components/Home";
+import About from "./components/About";
+import TodoTemplate from "./components/TodoTemplate";
+import TodoHead from "./components/TodoHead";
+
 // routes들을 정의하고 그룹하게 도와주는 애들.
 import { Route, Routes } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
@@ -45,7 +47,11 @@ function App() {
           <Route path="/contacts" element={<Contact />} />
           <Route
             path="/todo"
-            element={<TodoTemplateBlock>This Will be To Do </TodoTemplateBlock>}
+            element={
+              <TodoTemplate>
+                <TodoHead />
+              </TodoTemplate>
+            }
           />
           <Route path="/about" element={<About />} />
         </Routes>
