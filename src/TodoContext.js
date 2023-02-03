@@ -6,17 +6,17 @@ import React, { createContext, useReducer, useContext, useRef } from "react";
 const initialTodos = [
   {
     id: 1,
-    text: "리액트 공부하기",
+    text: "리액트 공부하기 👩‍💻💻",
     done: true,
   },
   {
     id: 2,
-    text: "영어 회화 연습",
+    text: "영어 회화 연습 🌎",
     done: true,
   },
   {
     id: 3,
-    text: "설거지",
+    text: "설거지 💧🍴✨",
     done: false,
   },
 ];
