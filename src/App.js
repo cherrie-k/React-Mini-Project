@@ -1,4 +1,8 @@
 import React from "react";
+// routes들을 정의하고 그룹하게 도와주는 애들.
+import { Route, Routes } from "react-router-dom";
+import { createGlobalStyle } from "styled-components";
+
 import Contact from "./components/Contact";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
@@ -6,11 +10,8 @@ import About from "./components/About";
 import TodoTemplate from "./components/TodoTemplate";
 import TodoHead from "./components/TodoHead";
 import TodoList from "./components/TodoList";
-
-// routes들을 정의하고 그룹하게 도와주는 애들.
-import { Route, Routes } from "react-router-dom";
-import { createGlobalStyle } from "styled-components";
 import TodoCreate from "./components/TodoCreate";
+import { TodoProvider } from "./TodoContext";
 
 //import "./App.css";
 
@@ -48,17 +49,20 @@ function App() {
           <Route
             path="/todo"
             element={
-              <TodoTemplate>
-                <TodoHead />
-                <TodoList />
-                <TodoCreate />
-              </TodoTemplate>
+              <TodoProvider>
+                <GlobalStyle />
+                <TodoTemplate>
+                  <TodoHead />
+                  <TodoList />
+                  <TodoCreate />
+                </TodoTemplate>
+              </TodoProvider>
             }
           />
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
-      <GlobalStyle />
+      {/*<GlobalStyle />*/}
     </>
   );
   //return <Contact />;
