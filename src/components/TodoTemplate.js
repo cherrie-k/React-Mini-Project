@@ -13,7 +13,7 @@ const TodoTemplateBlock = styled.div`
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
 
   margin: 0 auto; // auto를 통해 페이지 중앙에 나타나게 됨
-  margin-top: 96px; // 흰색 박스 윗 공간 담당
+  margin-top: 50px;
   margin-bottom: 32px;
 
   display: flex;

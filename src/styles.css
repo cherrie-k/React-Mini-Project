@@ -1,3 +1,5 @@
+/* 이건 NavBar CSS임*/
+
 * {
   box-sizing: border-box;
 }
@@ -17,7 +19,7 @@ body {
   justify-content: space-between;
   align-items: stretch;
   gap: 1rem;
-  padding: 0 1.5rem;
+  padding: 0 6rem;
 }
 
 .site-title {

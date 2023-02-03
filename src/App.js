@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import TodoTemplate from "./components/TodoTemplate";
 import TodoHead from "./components/TodoHead";
+import TodoList from "./components/TodoList";
 
 // routes들을 정의하고 그룹하게 도와주는 애들.
 import { Route, Routes } from "react-router-dom";
@@ -50,6 +51,7 @@ function App() {
             element={
               <TodoTemplate>
                 <TodoHead />
+                <TodoList />
               </TodoTemplate>
             }
           />

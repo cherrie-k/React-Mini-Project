@@ -4,9 +4,10 @@ import styled from "styled-components";
 
 // CSS 추가 할 때 주의할 점: 중복되는 클래스명 생성하지 않기! - 네이밍과 CSS Selector를 통해 방지 가능.
 const TodoHeadBlock = styled.div`
-  padding-top: 20px; /*얘도 원래랑 좀 다름*/
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 32px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 24px;
   border-bottom: 1px solid #e9ecef;
 
   h1 {
