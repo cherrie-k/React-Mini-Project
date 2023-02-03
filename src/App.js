@@ -3,14 +3,14 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 
-import Contact from "./components/Contact";
+import Contact from "./components/Contacts/Contact";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import About from "./components/About";
-import TodoTemplate from "./components/TodoTemplate";
-import TodoHead from "./components/TodoHead";
-import TodoList from "./components/TodoList";
-import TodoCreate from "./components/TodoCreate";
+import TodoTemplate from "./components/Todos/TodoTemplate";
+import TodoHead from "./components/Todos/TodoHead";
+import TodoList from "./components/Todos/TodoList";
+import TodoCreate from "./components/Todos/TodoCreate";
 import { TodoProvider } from "./TodoContext";
 
 //import "./App.css";

@@ -1,7 +1,8 @@
 // 오늘의 날짜, 요일, 앞으로 해야 할 일의 개수를 표시하는 컴포넌트
+
 import React from "react";
 import styled from "styled-components";
-import { useTodoState } from "../TodoContext";
+import { useTodoState } from "../../TodoContext";
 
 // CSS 추가 할 때 주의할 점: 중복되는 클래스명 생성하지 않기! - 네이밍과 CSS Selector를 통해 방지 가능.
 const TodoHeadBlock = styled.div`
