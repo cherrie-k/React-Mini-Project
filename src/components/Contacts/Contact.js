@@ -1,9 +1,11 @@
 import React from "react";
+import ContactTemplate from "./ContactTemplate";
 import ContactInfo from "./ContactInfo";
 import ContactDetails from "./ContactDetalis";
 import ContactCreate from "./ContactCreate";
 
 import update from "react-addons-update";
+import ContactShow from "./ContactShow";
 
 export default class Contact extends React.Component {
   constructor(props) {
@@ -148,26 +150,25 @@ export default class Contact extends React.Component {
 
     return (
       <div>
-        <h1>Terrrrrrrrible CSS right now!!!!!!!!!</h1>
-        <h1>Contacts</h1>
-
-        <input
-          name="keyword"
-          placeholder="Search for a keyword"
-          value={this.state.keyword}
-          // onChage일 때 this.handleChange 실행
-          onChange={this.handleChange}
-        />
-
-        <div>{mapToComponents(this.state.contactData)}</div>
-        <ContactDetails
-          isSelected={this.state.selectedKey !== -1}
-          contact={this.state.contactData[this.state.selectedKey]}
-          onRemove={this.handleRemove}
-          onEdit={this.handleEdit}
-        />
-
-        <ContactCreate onCreate={this.handleCreate} />
+        <ContactTemplate>
+          <ContactShow>
+            <input
+              name="keyword"
+              placeholder="Search for a keyword"
+              value={this.state.keyword}
+              // onChage일 때 this.handleChange 실행
+              onChange={this.handleChange}
+            />
+            <div>{mapToComponents(this.state.contactData)}</div>
+          </ContactShow>
+          <ContactDetails
+            isSelected={this.state.selectedKey !== -1}
+            contact={this.state.contactData[this.state.selectedKey]}
+            onRemove={this.handleRemove}
+            onEdit={this.handleEdit}
+          />
+          <ContactCreate onCreate={this.handleCreate} />
+        </ContactTemplate>
       </div>
     );
   }

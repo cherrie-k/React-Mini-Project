@@ -1,5 +1,18 @@
 import React, { Component } from "react";
-//import PropTypes from "prop-types";
+import styled from "styled-components";
+
+const ContactCreatePositioner = styled.div`
+  background: gold;
+  padding: 20px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  height: 100%;
+`;
+
+const ContactCreateBlock = styled.div`
+  display: grid;
+  //background: gold;
+`;
 
 class ContactCreate extends Component {
   constructor(props) {
@@ -48,31 +61,35 @@ class ContactCreate extends Component {
   render() {
     return (
       <div>
-        <h2>Create Contact</h2>
-        <p>
-          {/*밑에서 ref가 있는 코드 덕분에.. 정보 입력 후 제출이 끝나도 마우스 포인터표시? 포커스가 여전히 input 박스 안에 있을 수 있다. \
+        <ContactCreatePositioner>
+          <ContactCreateBlock>
+            <h2>Create Contact</h2>
+            <p>
+              {/*밑에서 ref가 있는 코드 덕분에.. 정보 입력 후 제출이 끝나도 마우스 포인터표시? 포커스가 여전히 input 박스 안에 있을 수 있다. \
             즉, 데이터 추가 후 특정 인풋에 focus를 줄 수 있다.  
           */}
-          <input
-            type="text"
-            name="name"
-            placeholder="name"
-            value={this.state.name}
-            onChange={this.handleChange}
-            ref={(ref) => {
-              this.nameInput = ref;
-            }}
-          />
-          <input
-            type="text"
-            name="phone"
-            placeholder="phone number"
-            value={this.state.phone}
-            onChange={this.handleChange}
-            onKeyPress={this.handleKeyPress}
-          />
-        </p>
-        <button onClick={this.handleClick}>Create</button>
+              <input
+                type="text"
+                name="name"
+                placeholder="name"
+                value={this.state.name}
+                onChange={this.handleChange}
+                ref={(ref) => {
+                  this.nameInput = ref;
+                }}
+              />
+              <input
+                type="text"
+                name="phone"
+                placeholder="phone number"
+                value={this.state.phone}
+                onChange={this.handleChange}
+                onKeyPress={this.handleKeyPress}
+              />
+            </p>
+            <button onClick={this.handleClick}>Create</button>
+          </ContactCreateBlock>
+        </ContactCreatePositioner>
       </div>
     );
   }

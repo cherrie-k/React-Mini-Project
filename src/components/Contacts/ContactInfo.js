@@ -1,3 +1,5 @@
+// 개별 Contact Info에 관한것
+
 import React from "react";
 
 export default class ContactInfo extends React.Component {

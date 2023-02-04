@@ -2,6 +2,18 @@
 
 import { Component } from "react";
 import Proptypes from "prop-types";
+import styled from "styled-components";
+
+const ContactDetailsPositioner = styled.div`
+  background: lightblue;
+  height: 100%;
+  flex-grow: 1; // 왜안됨?ㅠㅠ
+`;
+
+const ContactDetailsBlock = styled.div`
+  padding: 20px;
+  overflow-y: auto; // 스크롤바 보여줄지 말지 자동으로 결정. 내부 컨텐츠 크기가 주어진 공간을 넘어가는 경우에만 스크롤바 생김.
+`;
 
 class ContactDetails extends Component {
   constructor(props) {
@@ -97,16 +109,18 @@ class ContactDetails extends Component {
     const blank = <div>Not Selected</div>;
 
     return (
-      <div>
-        <h2>Details</h2>
-        {this.props.isSelected ? view : blank}
-        <p>
-          <button onClick={this.handleToggle}>
-            {this.state.isEdit ? "OK" : "Edit"}
-          </button>
-          <button onClick={this.props.onRemove}>Remove</button>
-        </p>
-      </div>
+      <ContactDetailsPositioner>
+        <ContactDetailsBlock>
+          <h2>Details</h2>
+          {this.props.isSelected ? view : blank}
+          <p>
+            <button onClick={this.handleToggle}>
+              {this.state.isEdit ? "OK" : "Edit"}
+            </button>
+            <button onClick={this.props.onRemove}>Remove</button>
+          </p>
+        </ContactDetailsBlock>
+      </ContactDetailsPositioner>
     );
   }
 }

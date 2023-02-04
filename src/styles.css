@@ -19,7 +19,7 @@ body {
   justify-content: space-between;
   align-items: stretch;
   gap: 1rem;
-  padding: 0 6rem;
+  padding: 0 8rem;
 }
 
 .site-title {
@@ -31,7 +31,7 @@ body {
   margin: 0;
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .nav a {
@@ -40,7 +40,7 @@ body {
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 0.25rem;
+  padding: 10px 0.25rem;
 }
 
 .nav li.active {
