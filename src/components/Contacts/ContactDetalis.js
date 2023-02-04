@@ -2,10 +2,10 @@
 
 import { Component } from "react";
 import Proptypes from "prop-types";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const ContactDetailsPositioner = styled.div`
-  background: lightblue;
+  background: #f0f2f5; // 아주연한회색
   height: 100%;
   flex-grow: 1; // 왜안됨?ㅠㅠ
 `;
@@ -13,6 +13,45 @@ const ContactDetailsPositioner = styled.div`
 const ContactDetailsBlock = styled.div`
   padding: 20px;
   overflow-y: auto; // 스크롤바 보여줄지 말지 자동으로 결정. 내부 컨텐츠 크기가 주어진 공간을 넘어가는 경우에만 스크롤바 생김.
+`;
+
+const ColorChipBlock = styled.div`
+  width: 50%;
+  margin: 9px auto; // 중앙에 놔줌
+
+  .color-box {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: skyblue;
+    height: 50px;
+  }
+
+  .color-name {
+    background: #fff;
+    height: 40px;
+    position: relative;
+    padding: 5px 20px;
+
+    font-size: 12px;
+    font-weight: medium;
+    text-transform: uppercase;
+    color: #444545;
+
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -webkit-box-shadow: 0px 3px 0px 0px rgba(226, 228, 231, 0.75);
+    -moz-box-shadow: 0px 3px 0px 0px rgba(226, 228, 231, 0.75);
+    box-shadow: 0px 3px 0px 0px rgba(226, 228, 231, 0.75);
+  }
+
+  // hover시 위치 올리기
+  position: relative;
+  top: 0;
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  &:hover {
+    top: -4px;
+    box-shadow: 0 8px 20px rgba(gray, 0.12);
+  }
 `;
 
 class ContactDetails extends Component {
@@ -76,6 +115,10 @@ class ContactDetails extends Component {
       <div>
         <p>Name: {this.props.contact.name}</p>
         <p>Number: {this.props.contact.phone}</p>
+        <ColorChipBlock>
+          <div className="color-box"></div>
+          <div className="color-name">{this.props.contact.name}</div>
+        </ColorChipBlock>
       </div>
     );
 

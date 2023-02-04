@@ -14,7 +14,8 @@ const ContactTemplateBlock = styled.div`
 
   margin: 0 auto; // auto를 통해 페이지 중앙에 나타나게 됨
   margin-top: 90px;
-  margin-bottom: 32px;
+  margin-bottom: 30px;
+  padding: 20px;
 
   display: flex;
   justify-content: space-between;
