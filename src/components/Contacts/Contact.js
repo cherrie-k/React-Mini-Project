@@ -17,28 +17,20 @@ export default class Contact extends React.Component {
 
       contactData: [
         {
-          name: "Cherrie",
-          phone: "010-0000-0001",
+          name: "Charming Cherry",
+          phone: "ff90a2",
         },
         {
-          name: "Berry",
-          phone: "010-0000-0002",
+          name: "Quiet Kiwi",
+          phone: "b8cfac",
         },
         {
-          name: "Harry",
-          phone: "010-0000-0003",
+          name: "Florida Orange",
+          phone: "ffaa00",
         },
         {
-          name: "Garry",
-          phone: "010-0000-0004",
-        },
-        {
-          name: "Kerry",
-          phone: "010-0000-0005",
-        },
-        {
-          name: "Perry",
-          phone: "010-0000-0006",
+          name: "Blueberry Bush",
+          phone: "4e72b2",
         },
       ],
     };

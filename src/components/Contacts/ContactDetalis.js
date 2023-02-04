@@ -2,7 +2,7 @@
 
 import { Component } from "react";
 import Proptypes from "prop-types";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const ContactDetailsPositioner = styled.div`
   background: #f0f2f5; // 아주연한회색
@@ -20,10 +20,10 @@ const ColorChipBlock = styled.div`
   margin: 9px auto; // 중앙에 놔줌
 
   .color-box {
+    // background: skyblue;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    background: skyblue;
-    height: 50px;
+    height: 70px;
   }
 
   .color-name {
@@ -114,9 +114,12 @@ class ContactDetails extends Component {
     const details = (
       <div>
         <p>Name: {this.props.contact.name}</p>
-        <p>Number: {this.props.contact.phone}</p>
+        <p>Hex Code: #{this.props.contact.phone}</p>
         <ColorChipBlock>
-          <div className="color-box"></div>
+          <div
+            className="color-box"
+            style={{ background: "#" + this.props.contact.phone }}
+          ></div>
           <div className="color-name">{this.props.contact.name}</div>
         </ColorChipBlock>
       </div>
@@ -126,6 +129,7 @@ class ContactDetails extends Component {
       <div>
         <p>
           <input
+            required
             type="text"
             name="name"
             placeholder="name"
@@ -135,9 +139,11 @@ class ContactDetails extends Component {
         </p>
         <p>
           <input
+            required
             type="text"
             name="phone"
             placeholder="phone number"
+            maxLength="6"
             value={this.state.phone}
             onChange={this.handleChange}
             onKeyPress={this.handleKeyPress}
