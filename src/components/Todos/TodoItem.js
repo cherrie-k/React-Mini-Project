@@ -3,14 +3,16 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { MdDone, MdDelete } from "react-icons/md";
+import { useTodoDispatch } from "./TodoContext";
 
 const Remove = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: green; // <-------
+  color: blue;
   font-size: 24px;
   cursor: pointer;
+  opacity: 50%;
   &:hover {
     color: pink;
   }
@@ -45,7 +47,8 @@ const TodoItemBlock = styled.div`
   padding-bottom: 12px;
   &:hover {
     ${Remove} {
-      display: initial;
+      display: initial; // 지우기?
+      opacity: 50%;
     }
   }
 `;
@@ -53,24 +56,31 @@ const TodoItemBlock = styled.div`
 const Text = styled.div`
   flex: 1;
   font-size: 21px;
-  color: blue;
+  color: #495057;
   ${(props) =>
     props.done &&
     css`
-      color: red;
+      color: #c7ccd1;
     `}
 `;
 
 function TodoItem({ id, done, text }) {
+  const dispatch = useTodoDispatch();
+  const onToggle = () => dispatch({ type: "TOGGLE", id });
+  const onRemove = () => dispatch({ type: "REMOVE", id });
+
   return (
     <TodoItemBlock>
-      <CheckCircle done={done}>{done && <MdDone />}</CheckCircle>
+      <CheckCircle done={done} onClick={onToggle}>
+        {done && <MdDone />}
+      </CheckCircle>
       <Text done={done}>{text}</Text>
-      <Remove>
+      <Remove onClick={onRemove}>
         <MdDelete />
       </Remove>
     </TodoItemBlock>
   );
 }
 
-export default TodoItem;
+// React.memo를 하면 다른 항목이 업데이트 될 때 불필요한 리렌더링을 방지해줌. (성능 최적화)
+export default React.memo(TodoItem);

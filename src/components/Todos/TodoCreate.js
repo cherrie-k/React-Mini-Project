@@ -3,6 +3,7 @@
 import React, { useState } from "react"; //  useState 따로 import 해줘야함~!
 import styled, { css } from "styled-components";
 import { MdAdd } from "react-icons/md";
+import { useTodoDispatch, useTodoNextId } from "./TodoContext";
 
 const CircleButton = styled.button`
   background: blue; // 버튼 제일 기본색
@@ -80,16 +81,40 @@ const Input = styled.input`
 function TodoCreate() {
   // useState로 토글 할 수 있는 open값 관리. 이게 true면 + 아이콘을 돌려서 X 되게 하고, 할일 입력 칸 나옴.
   const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("");
+
+  const dispatch = useTodoDispatch();
+  const nextId = useTodoNextId();
+
   const onToggle = () => setOpen(!open);
+  const onChange = (e) => setValue(e.target.value);
+
+  const onSubmit = (e) => {
+    // onSubmit은 새로운 항목을 추가하는 액션을 dispatch하고, value를 초기화 해주고, open의 값을 false로 전환해줌.
+    e.preventDefault(); // 새로고침 방지
+    dispatch({
+      type: "CREATE",
+      todo: {
+        id: nextId.current,
+        text: value,
+        done: false,
+      },
+    });
+    setValue("");
+    setOpen(false);
+    nextId.current += 1;
+  };
 
   return (
     <>
       {open && (
         <InsertFormPositioner>
-          <InsertForm>
+          <InsertForm onSubmit={onSubmit}>
             <Input
               autoFocus
               placeholder="Input your to-do, then press 'Enter'"
+              onChange={onChange}
+              value={value}
             />
           </InsertForm>
         </InsertFormPositioner>
@@ -101,4 +126,5 @@ function TodoCreate() {
   );
 }
 
-export default TodoCreate;
+// React.memo를 하면 TodoContext에서 관리하는 state가 바뀔 때 불필요한 리렌더링을 방지해줌. (성능 최적화)
+export default React.memo(TodoCreate);
