@@ -7,9 +7,9 @@ import { ColorChipRound } from "./ColorChip";
 const InfoBlock = styled.div`
   // Contact Show 안에 있는 개별 색 이름에 적용
   display: inline-flex;
-
   margin-left: 10px;
   cursor: pointer;
+  font-size: 16px;
 `;
 
 class ContactInfo extends React.Component {

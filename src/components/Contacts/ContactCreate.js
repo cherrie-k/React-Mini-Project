@@ -18,6 +18,10 @@ const ContactCreateBlock = styled.div`
 
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
+
+  h3 {
+    color: #d2a8d4;
+  }
 `;
 
 class ContactCreate extends Component {

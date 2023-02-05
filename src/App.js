@@ -13,7 +13,7 @@ import About from "./components/About";
 
 // 글로벌 스타일로 페이지 전체 설정 가능
 const GlobalStyle = createGlobalStyle`
-  body{ background: #e9ecef;}
+  body{ background: #e6e6fa;}
 `;
 
 function App() {

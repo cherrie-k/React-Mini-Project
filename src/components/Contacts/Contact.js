@@ -158,6 +158,7 @@ export default class Contact extends React.Component {
         <ContactTemplate>
           <ContactShow>
             <input
+              className="search-bar"
               name="keyword"
               placeholder="Search"
               value={this.state.keyword}

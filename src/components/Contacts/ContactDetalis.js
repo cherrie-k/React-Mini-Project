@@ -7,25 +7,64 @@ import styled from "styled-components";
 import { FaPalette, FaQuestion } from "react-icons/fa";
 
 const ContactDetailsPositioner = styled.div`
+  background: #fafafa; // 아주연한회색
   display: inline-block;
-  min-height: 0;
   position: relative;
   min-width: 200px;
   flex-grow: 1; // 이게 있어야 빈자리 채워줌
-  overflow-y: auto; // 스크롤바 보여줄지 말지 자동으로 결정. 내부 컨텐츠 크기가 주어진 공간을 넘어가는 경우에만 스크롤바 생김.
+  overflow-y: scroll; // 스크롤바 보여줄지 말지 자동으로 결정. 내부 컨텐츠 크기가 주어진 공간을 넘어가는 경우에만 스크롤바 생김.
 `;
 
 const ContactDetailsBlock = styled.div`
-  background: #f0f2f5; // 아주연한회색
-
+  background: #fafafa;
+  //background: #f0f2f5; // 아주연한회색, 다른 후보: #f8f8f8;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  line-height: 0.8em;
+  padding: 6px 30px; // 상하, 좌우
 
-  padding: 30px;
+  h3 {
+    // "Details"
+    color: gray;
+    font-size: 25px;
+    margin: 9px;
+    margin-left: -7px;
+  }
 
-  height: 100%;
+  .tag-text {
+    display: inline-flex;
+    justify-content: center; // 가로
+    align-items: center;
+
+    width: 60px;
+    height: 22px;
+    font-weight: bold;
+    //border: solid 1px gray;
+    //border-radius: 15px;
+  }
+
+  .desc-text {
+    display: inline-flex;
+    align-items: center;
+    height: 22px;
+    padding-left: 10px;
+    text-transform: uppercase;
+  }
+
+  #description-box {
+    background: white;
+    padding: 10px 20px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.05); // 이거 0.1 대신 0.04정도로도 바꿔보기
+    border-radius: 8px;
+  }
+
+  #desc-optional {
+  }
+
+  #button-edit {
+  }
+  #button-remove {
+  }
 `;
 
 class ContactDetails extends Component {
@@ -96,10 +135,22 @@ class ContactDetails extends Component {
 
   render() {
     const details = (
-      <div>
-        <p>Name: {this.props.contact.name}</p>
-        <p>Hex Code: #{this.props.contact.phone}</p>
-        <p>RGB Code: {this.hexToRGB(this.props.contact.phone)}</p>
+      <div id="description-box">
+        <div className="detail-text">
+          <div className="tag-text">NAME</div>
+          <div className="desc-text">{this.props.contact.name}</div>
+        </div>
+        <div className="detail-text">
+          <div className="tag-text">H E X</div>
+          <div className="desc-text">#{this.props.contact.phone}</div>
+        </div>
+        <div className="detail-text">
+          <div className="tag-text">R G B</div>
+          <div className="desc-text">
+            {this.hexToRGB(this.props.contact.phone)}
+          </div>
+        </div>
+
         <ColorChip>
           <div
             className="color-box"
@@ -110,7 +161,7 @@ class ContactDetails extends Component {
             #{this.props.contact.phone}
           </div>
         </ColorChip>
-        <div>
+        <div id="desc-optional">
           <p>{this.props.contact.desc}</p>
         </div>
       </div>
@@ -177,10 +228,12 @@ class ContactDetails extends Component {
           <h3>Details</h3>
           {this.props.isSelected ? view : blank}
           <p>
-            <button onClick={this.handleToggle}>
+            <button onClick={this.handleToggle} id="button-edit">
               {this.state.isEdit ? "OK" : "Edit"}
             </button>
-            <button onClick={this.props.onRemove}>Remove</button>
+            <button onClick={this.props.onRemove} id="button-remove">
+              Remove
+            </button>
           </p>
         </ContactDetailsBlock>
       </ContactDetailsPositioner>

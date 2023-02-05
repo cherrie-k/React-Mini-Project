@@ -2,8 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const ColorChipBlock = styled.div`
+  min-width: 90px;
+  max-width: 400px;
   width: 50%;
   margin: 9px auto; // 중앙에 놔줌
+  margin-top: 23px;
+  box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.05); // 이거 0.1 대신 0.04정도로도 바꿔보기
 
   .color-box {
     // background: skyblue;
@@ -73,7 +77,7 @@ export const ColorChipItem = styled.div`
 
   padding-top: 10px;
   padding-bottom: 10px;
-  border-bottom: 0.8px solid #e7eaef;
+  border-bottom: 0.8px solid #e6e6fa; // 라벤더 그레이 회색
 
   width: 100%;
 `;
