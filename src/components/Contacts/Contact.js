@@ -3,6 +3,7 @@ import ContactTemplate from "./ContactTemplate";
 import ContactInfo from "./ContactInfo";
 import ContactDetails from "./ContactDetalis";
 import ContactCreate from "./ContactCreate";
+import { ColorChipItem } from "./ColorChip";
 
 import update from "react-addons-update";
 import ContactShow from "./ContactShow";
@@ -139,11 +140,15 @@ export default class Contact extends React.Component {
       return data.map((contact, i) => {
         // 컴포넌트에선 onClick 적용 안됨에 주의!
         return (
-          <ContactInfo
-            contact={contact}
-            key={i}
-            onClick={() => this.handleClick(i)}
-          />
+          <div>
+            <ColorChipItem>
+              <ContactInfo
+                contact={contact}
+                key={i}
+                onClick={() => this.handleClick(i)}
+              />
+            </ColorChipItem>
+          </div>
         );
       });
     };
@@ -154,7 +159,7 @@ export default class Contact extends React.Component {
           <ContactShow>
             <input
               name="keyword"
-              placeholder="Search for a keyword"
+              placeholder="Search"
               value={this.state.keyword}
               // onChage일 때 this.handleChange 실행
               onChange={this.handleChange}

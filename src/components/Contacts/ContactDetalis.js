@@ -7,14 +7,25 @@ import styled from "styled-components";
 import { FaPalette, FaQuestion } from "react-icons/fa";
 
 const ContactDetailsPositioner = styled.div`
-  background: #f0f2f5; // 아주연한회색
-  height: 100%;
-  flex-grow: 1; // 왜안됨?ㅠㅠ
+  display: inline-block;
+  min-height: 0;
+  position: relative;
+  min-width: 200px;
+  flex-grow: 1; // 이게 있어야 빈자리 채워줌
   overflow-y: auto; // 스크롤바 보여줄지 말지 자동으로 결정. 내부 컨텐츠 크기가 주어진 공간을 넘어가는 경우에만 스크롤바 생김.
 `;
 
 const ContactDetailsBlock = styled.div`
-  padding: 20px;
+  background: #f0f2f5; // 아주연한회색
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 0.8em;
+
+  padding: 30px;
+
+  height: 100%;
 `;
 
 class ContactDetails extends Component {
@@ -89,14 +100,18 @@ class ContactDetails extends Component {
         <p>Name: {this.props.contact.name}</p>
         <p>Hex Code: #{this.props.contact.phone}</p>
         <p>RGB Code: {this.hexToRGB(this.props.contact.phone)}</p>
-        <p>{this.props.contact.desc}</p>
+
         <ColorChip>
           <div
             className="color-box"
             style={{ background: "#" + this.props.contact.phone }}
           ></div>
           <div className="color-name">{this.props.contact.name}</div>
+          <div className="color-name" id="color-code">
+            #{this.props.contact.phone}
+          </div>
         </ColorChip>
+        <p>{this.props.contact.desc}</p>
       </div>
     );
 
@@ -142,13 +157,15 @@ class ContactDetails extends Component {
 
     const blank = (
       <div>
-        <div> Select a Color from the Left</div>
         <ColorChip>
           <div className="color-box" id="no-select">
             <FaPalette />
             <FaQuestion />
           </div>
-          <div className="color-name"></div>
+          <div className="color-name">
+            <div>Select a Color</div>
+            <div>from the Left !</div>
+          </div>
         </ColorChip>
       </div>
     );
@@ -156,7 +173,7 @@ class ContactDetails extends Component {
     return (
       <ContactDetailsPositioner>
         <ContactDetailsBlock>
-          <h2>Details</h2>
+          <h3>Details</h3>
           {this.props.isSelected ? view : blank}
           <p>
             <button onClick={this.handleToggle}>

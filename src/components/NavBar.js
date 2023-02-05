@@ -1,5 +1,5 @@
 // import { Nav } from "react-bootstrap";
-import "../styles.css";
+import "../styles/styles.css";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 // Link 쓸 땐 href 대신 to를 써줘야 함. 원래 <a href="/"> 이런식으로 써있었다면 걔네를 <Link to="/"> 이런식으로 바꾸기.
 
