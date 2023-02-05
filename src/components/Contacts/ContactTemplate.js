@@ -3,6 +3,31 @@
 import React from "react";
 import styled from "styled-components";
 
+const ContactBodyBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  //align-items: center;
+  margin-top: 50px;
+
+  #project-title {
+    font-size: 36px;
+    margin-left: 12%;
+    //margin-right: 30%;
+    margin-bottom: 15px;
+    direction: ltr;
+    min-width: 430px;
+  }
+
+  #clear-local {
+    font-size: 15px;
+    margin-top: 15px;
+    align-self: center;
+    padding-left: 350px;
+    min-width: 700px;
+    direction: rtl;
+  }
+`;
+
 const ContactTemplateBlock = styled.div`
   display: flex;
   justify-content: space-between;
@@ -17,27 +42,19 @@ const ContactTemplateBlock = styled.div`
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.05); // 이거 0.1 대신 0.04정도로도 바꿔보기
 
   margin: 0 auto; // auto를 통해 페이지 중앙에 나타나게 됨
-  margin-top: 60px;
-  margin-bottom: 30px;
-`;
-
-const OutsideTextBlock = styled.div`
-  color: gray;
 `;
 
 function ContactTemplate({ children }) {
   return (
     <div>
-      <OutsideTextBlock>
-        <h2>Cherrie's Color Dictionary</h2>
-      </OutsideTextBlock>
-      <ContactTemplateBlock>{children}</ContactTemplateBlock>
-      <OutsideTextBlock>
-        <h3>
+      <ContactBodyBlock>
+        <div id="project-title">Cherrie's Color Dictionary</div>
+        <ContactTemplateBlock>{children}</ContactTemplateBlock>
+        <div id="clear-local">
           To go back to default state, press F12 and type in{" "}
           <samp>localStorage.clear();</samp> in console
-        </h3>
-      </OutsideTextBlock>
+        </div>
+      </ContactBodyBlock>
     </div>
   );
 }
