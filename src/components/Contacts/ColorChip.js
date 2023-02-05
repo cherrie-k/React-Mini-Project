@@ -52,8 +52,24 @@ const ColorChipBlock = styled.div`
   }
 
   #no-select {
-    background: pink;
-    color: black;
+    display: flex;
+    justify-content: center;
+    //align-items: center;
+    background: linear-gradient(-45deg, #ffff00, #f8c0ce, #5cf0f8, #fff700);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   }
 `;
 

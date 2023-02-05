@@ -4,7 +4,6 @@ import { Component } from "react";
 import ColorChip from "./ColorChip";
 import Proptypes from "prop-types";
 import styled from "styled-components";
-import { FaPalette, FaQuestion } from "react-icons/fa";
 
 const ContactDetailsPositioner = styled.div`
   background: #fafafa; // 아주연한회색
@@ -210,10 +209,7 @@ class ContactDetails extends Component {
     const blank = (
       <div>
         <ColorChip>
-          <div className="color-box" id="no-select">
-            <FaPalette />
-            <FaQuestion />
-          </div>
+          <div className="color-box" id="no-select"></div>
           <div className="color-name">
             <div>Select a Color</div>
             <div>from the Left !</div>
