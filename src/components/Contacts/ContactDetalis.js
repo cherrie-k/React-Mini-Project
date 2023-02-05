@@ -1,57 +1,20 @@
 // 어떤 name을 선택 했을 때, 그 name에 해당하는 정보가 나타나게 함
 
 import { Component } from "react";
+import ColorChip from "./ColorChip";
 import Proptypes from "prop-types";
 import styled from "styled-components";
+import { FaPalette, FaQuestion } from "react-icons/fa";
 
 const ContactDetailsPositioner = styled.div`
   background: #f0f2f5; // 아주연한회색
   height: 100%;
   flex-grow: 1; // 왜안됨?ㅠㅠ
+  overflow-y: auto; // 스크롤바 보여줄지 말지 자동으로 결정. 내부 컨텐츠 크기가 주어진 공간을 넘어가는 경우에만 스크롤바 생김.
 `;
 
 const ContactDetailsBlock = styled.div`
   padding: 20px;
-  overflow-y: auto; // 스크롤바 보여줄지 말지 자동으로 결정. 내부 컨텐츠 크기가 주어진 공간을 넘어가는 경우에만 스크롤바 생김.
-`;
-
-const ColorChipBlock = styled.div`
-  width: 50%;
-  margin: 9px auto; // 중앙에 놔줌
-
-  .color-box {
-    // background: skyblue;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    height: 70px;
-  }
-
-  .color-name {
-    background: #fff;
-    height: 40px;
-    position: relative;
-    padding: 5px 20px;
-
-    font-size: 12px;
-    font-weight: medium;
-    text-transform: uppercase;
-    color: #444545;
-
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    -webkit-box-shadow: 0px 3px 0px 0px rgba(226, 228, 231, 0.75);
-    -moz-box-shadow: 0px 3px 0px 0px rgba(226, 228, 231, 0.75);
-    box-shadow: 0px 3px 0px 0px rgba(226, 228, 231, 0.75);
-  }
-
-  // hover시 위치 올리기
-  position: relative;
-  top: 0;
-  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  &:hover {
-    top: -4px;
-    box-shadow: 0 8px 20px rgba(gray, 0.12);
-  }
 `;
 
 class ContactDetails extends Component {
@@ -62,6 +25,7 @@ class ContactDetails extends Component {
       isEdit: false,
       name: "",
       phone: "",
+      desc: "",
     };
 
     this.handleToggle = this.handleToggle.bind(this);
@@ -80,6 +44,7 @@ class ContactDetails extends Component {
       this.setState({
         name: this.props.contact.name,
         phone: this.props.contact.phone,
+        desc: this.props.contact.desc,
       });
     } else {
       this.handleEdit();
@@ -99,7 +64,7 @@ class ContactDetails extends Component {
   }
 
   handleEdit() {
-    this.props.onEdit(this.state.name, this.state.phone);
+    this.props.onEdit(this.state.name, this.state.phone, this.state.desc);
   }
 
   handleKeyPress(e) {
@@ -110,18 +75,28 @@ class ContactDetails extends Component {
 
   handleClear;
 
+  hexToRGB = (hex) => {
+    let r = parseInt(hex.slice(1, 3), 16);
+    let g = parseInt(hex.slice(3, 5), 16);
+    let b = parseInt(hex.slice(5, 7), 16);
+
+    return `rgb(${r}, ${g}, ${b})`;
+  };
+
   render() {
     const details = (
       <div>
         <p>Name: {this.props.contact.name}</p>
         <p>Hex Code: #{this.props.contact.phone}</p>
-        <ColorChipBlock>
+        <p>RGB Code: {this.hexToRGB(this.props.contact.phone)}</p>
+        <p>{this.props.contact.desc}</p>
+        <ColorChip>
           <div
             className="color-box"
             style={{ background: "#" + this.props.contact.phone }}
           ></div>
           <div className="color-name">{this.props.contact.name}</div>
-        </ColorChipBlock>
+        </ColorChip>
       </div>
     );
 
@@ -129,22 +104,32 @@ class ContactDetails extends Component {
       <div>
         <p>
           <input
-            required
+            required={true}
             type="text"
             name="name"
-            placeholder="name"
+            placeholder="name of color"
             value={this.state.name}
             onChange={this.handleChange}
           />
         </p>
         <p>
           <input
-            required
+            required={true}
             type="text"
             name="phone"
-            placeholder="phone number"
+            placeholder="hex code"
             maxLength="6"
             value={this.state.phone}
+            onChange={this.handleChange}
+            onKeyPress={this.handleKeyPress}
+          />
+        </p>
+        <p>
+          <input
+            type="text"
+            name="desc"
+            placeholder="describe more (optional)"
+            value={this.state.desc}
             onChange={this.handleChange}
             onKeyPress={this.handleKeyPress}
           />
@@ -155,7 +140,18 @@ class ContactDetails extends Component {
     //view가 false면 details를 반환
     const view = this.state.isEdit ? edit : details;
 
-    const blank = <div>Not Selected</div>;
+    const blank = (
+      <div>
+        <div> Select a Color from the Left</div>
+        <ColorChip>
+          <div className="color-box" id="no-select">
+            <FaPalette />
+            <FaQuestion />
+          </div>
+          <div className="color-name"></div>
+        </ColorChip>
+      </div>
+    );
 
     return (
       <ContactDetailsPositioner>
@@ -178,6 +174,7 @@ ContactDetails.defaultProps = {
   contact: {
     name: "",
     phone: "",
+    desc: "",
   },
 
   // 지정되지 않았을 때 에러 발생시킴

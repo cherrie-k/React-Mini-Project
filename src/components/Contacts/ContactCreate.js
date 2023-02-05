@@ -10,8 +10,8 @@ const ContactCreatePositioner = styled.div`
 `;
 
 const ContactCreateBlock = styled.div`
-  display: grid;
-  //background: gold;
+  display: flex;
+  flex-direction: column;
 `;
 
 class ContactCreate extends Component {
@@ -20,6 +20,7 @@ class ContactCreate extends Component {
     this.state = {
       name: "",
       phone: "",
+      desc: "",
     };
 
     // 임의 메소드를 만들었으니 바인딩 해줘야함!! 그리고 이걸 onChange 이벤트에 연결.
@@ -38,7 +39,11 @@ class ContactCreate extends Component {
 
   // Contact에서 onCreate라는 props 받아오기
   handleClick() {
-    const contact = { name: this.state.name, phone: this.state.phone };
+    const contact = {
+      name: this.state.name,
+      phone: this.state.phone,
+      desc: this.state.desc,
+    };
 
     this.props.onCreate(contact); //onCreate에게 contact 정보 전달
     // onCreate한테 넘겨준 다음엔 정보
@@ -46,6 +51,7 @@ class ContactCreate extends Component {
     this.setState({
       name: "",
       phone: "",
+      desc: "", // 새로만듦
     });
 
     // 얠 통해서 인풋에 포커스 둠.
@@ -68,27 +74,41 @@ class ContactCreate extends Component {
               {/*밑에서 ref가 있는 코드 덕분에.. 정보 입력 후 제출이 끝나도 마우스 포인터표시? 포커스가 여전히 input 박스 안에 있을 수 있다. \
             즉, 데이터 추가 후 특정 인풋에 focus를 줄 수 있다.  
           */}
-              <input
-                required
-                type="text"
-                name="name"
-                placeholder="name of color"
-                value={this.state.name}
-                onChange={this.handleChange}
-                ref={(ref) => {
-                  this.nameInput = ref;
-                }}
-              />
-              <input
-                required
-                type="text"
-                name="phone"
-                placeholder="hex of color (e.g. ff90a2)"
-                value={this.state.phone}
-                onChange={this.handleChange}
-                maxLength="6"
-                onKeyPress={this.handleKeyPress}
-              />
+              <div>
+                <input
+                  required={true}
+                  type="text"
+                  name="name"
+                  placeholder="name of color"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                  ref={(ref) => {
+                    this.nameInput = ref;
+                  }}
+                />
+              </div>
+              <div>
+                <input
+                  required={true}
+                  type="text"
+                  name="phone"
+                  placeholder="hex of color (e.g. ff90a2)"
+                  value={this.state.phone}
+                  onChange={this.handleChange}
+                  maxLength="6"
+                  onKeyPress={this.handleKeyPress}
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="desc"
+                  placeholder="describe more (optional)"
+                  value={this.state.desc}
+                  onChange={this.handleChange}
+                  onKeyPress={this.handleKeyPress}
+                />
+              </div>
             </p>
             <button onClick={this.handleClick}>Create</button>
           </ContactCreateBlock>

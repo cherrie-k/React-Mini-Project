@@ -23,14 +23,21 @@ export default class Contact extends React.Component {
         {
           name: "Quiet Kiwi",
           phone: "b8cfac",
+          desc: "Did you know... There's another color with the code of #c0cfae with the same name!",
         },
         {
           name: "Florida Orange",
           phone: "ffaa00",
+          desc: "This color is also called 'Flash of Orange' by California Paints and Dunn-Edwards!",
         },
         {
           name: "Blueberry Bush",
           phone: "4e72b2",
+        },
+        {
+          name: "Banana Peel",
+          phone: "ffe774",
+          desc: "It was hard for me to decide whether to put 'Lemon Burst(#feee91)' or this. ",
         },
       ],
     };
@@ -79,7 +86,7 @@ export default class Contact extends React.Component {
     this.setState({
       selectedKey: key,
     });
-    console.log(key, "is selected");
+    //console.log(key, "is selected");
   }
 
   handleCreate(contact) {
@@ -102,13 +109,14 @@ export default class Contact extends React.Component {
     });
   }
 
-  handleEdit(name, phone) {
+  handleEdit(name, phone, desc) {
     this.setState({
       contactData: update(this.state.contactData, {
         [this.state.selectedKey]: {
           // this.state.selectedKey번째 아이템 수정
           name: { $set: name },
           phone: { $set: phone },
+          desc: { $set: desc },
         },
       }),
     });

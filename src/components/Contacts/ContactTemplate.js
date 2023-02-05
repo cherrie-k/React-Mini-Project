@@ -23,7 +23,18 @@ const ContactTemplateBlock = styled.div`
 `;
 
 function ContactTemplate({ children }) {
-  return <ContactTemplateBlock>{children}</ContactTemplateBlock>;
+  return (
+    <div>
+      <div>Cherrie's Color Dictionary</div>
+      <div>
+        <ContactTemplateBlock>{children}</ContactTemplateBlock>
+      </div>
+      <div>
+        To go back to default state, press F12 and type in{" "}
+        <samp>localStorage.clear();</samp> in console
+      </div>
+    </div>
+  );
 }
 
 export default ContactTemplate;

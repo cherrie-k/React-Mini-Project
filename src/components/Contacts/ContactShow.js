@@ -7,6 +7,9 @@ const ContactShowBlock = styled.div`
   border-top-left-radius: 24px;
   border-bottom-left-radius: 24px;
   overflow-y: auto; // 스크롤바 보여줄지 말지 자동으로 결정. 내부 컨텐츠 크기가 주어진 공간을 넘어가는 경우에만 스크롤바 생김.
+
+  display: flex;
+  flex-direction: column;
 `;
 
 function ContactShow({ children }) {

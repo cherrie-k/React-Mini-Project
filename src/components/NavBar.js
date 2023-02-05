@@ -10,7 +10,7 @@ function NavBar() {
         Cherrie's
       </Link>
       <ul>
-        <CustomLink to="/contacts">Color Dictionary</CustomLink>
+        <CustomLink to="/colors">Color Dictionary</CustomLink>
         <CustomLink to="/todo">Todo List</CustomLink>
         <CustomLink to="/about">About</CustomLink>
       </ul>
