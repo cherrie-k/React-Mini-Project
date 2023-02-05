@@ -100,7 +100,6 @@ class ContactDetails extends Component {
         <p>Name: {this.props.contact.name}</p>
         <p>Hex Code: #{this.props.contact.phone}</p>
         <p>RGB Code: {this.hexToRGB(this.props.contact.phone)}</p>
-
         <ColorChip>
           <div
             className="color-box"
@@ -111,7 +110,9 @@ class ContactDetails extends Component {
             #{this.props.contact.phone}
           </div>
         </ColorChip>
-        <p>{this.props.contact.desc}</p>
+        <div>
+          <p>{this.props.contact.desc}</p>
+        </div>
       </div>
     );
 

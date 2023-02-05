@@ -55,18 +55,20 @@ const ColorChipBlock = styled.div`
 
 export const ColorChipRoundBlock = styled.div`
   // Contact Show 안에 있는 dot 들에 적용
+  display: inline-flex;
 
   .round {
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
+    display: inline;
   }
 `;
 
 export const ColorChipItem = styled.div`
   // ColorChipRound랑 InfoBlck 감싸고 있음ㅠㅠ
 
-  display: inline-flex;
+  display: flex;
   align-items: center;
 
   padding-top: 10px;
@@ -76,12 +78,10 @@ export const ColorChipItem = styled.div`
   width: 100%;
 `;
 
-function ColorChip({ children }) {
-  return <ColorChipBlock>{children}</ColorChipBlock>;
-}
-
 export function ColorChipRound({ children }) {
   return <ColorChipRoundBlock>{children}</ColorChipRoundBlock>;
 }
 
-export default ColorChip;
+export default function ColorChip({ children }) {
+  return <ColorChipBlock>{children}</ColorChipBlock>;
+}
