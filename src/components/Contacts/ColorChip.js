@@ -91,8 +91,8 @@ export const ColorChipItem = styled.div`
   display: flex;
   align-items: center;
 
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   border-bottom: 0.8px solid #e6e6fa; // 라벤더 그레이 회색
 
   width: 100%;

@@ -36,7 +36,7 @@ const ContactCreateBlock = styled.div`
     padding: 10px 10px;
     background: #fff; //white
 
-    border: 2px solid #d2a8d4;
+    border: 2px solid #d499ff;
     border-radius: 10px;
 
     cursor: pointer;
@@ -44,7 +44,7 @@ const ContactCreateBlock = styled.div`
     transition: 0.25s;
 
     &:hover {
-      box-shadow: inset 0 -3.25em 0 0 #d2a8d4;
+      box-shadow: inset 0 -3.25em 0 0 #d499ff;
       color: #fff;
     }
     &:focus {
@@ -119,7 +119,7 @@ class ContactCreate extends Component {
               <div>
                 <input
                   className="input-box"
-                  required={true}
+                  required
                   type="text"
                   name="name"
                   placeholder="name of color"
@@ -133,7 +133,7 @@ class ContactCreate extends Component {
               <div>
                 <input
                   className="input-box"
-                  required={true}
+                  required
                   type="text"
                   name="phone"
                   placeholder="hex of color (e.g. ff90a2)"

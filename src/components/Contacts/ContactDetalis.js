@@ -20,15 +20,7 @@ const ContactDetailsBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 6px 30px; // 상하, 좌우
-
-  h3 {
-    // "Details"
-    color: gray;
-    font-size: 20px;
-    margin: 9px;
-    margin-left: -7px;
-  }
+  padding: 5px 5px;
 
   .tag-text {
     display: inline-flex;
@@ -52,14 +44,17 @@ const ContactDetailsBlock = styled.div`
 
   #description-box {
     background: #fff; //white
-    padding: 0 20px;
-    padding-top: 14px;
-    padding-bottom: 10px;
+    max-width: 1000px;
+    margin: 15px 15px 0px 15px;
+    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 12px;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.05); // 이거 0.1 대신 0.04정도로도 바꿔보기
     border-radius: 8px;
   }
 
   #desc-optional {
+    color: black;
   }
 
   .buttons {
@@ -255,7 +250,6 @@ class ContactDetails extends Component {
     return (
       <ContactDetailsPositioner>
         <ContactDetailsBlock>
-          <h3>Details</h3>
           {this.props.isSelected ? view : blank}
           <p>
             <button

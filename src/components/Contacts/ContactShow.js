@@ -29,7 +29,7 @@ const ContactShowBlock = styled.div`
     margin-top: 8px;
     margin-bottom: 13px;
     border-radius: 20px;
-    border: 2px solid #d2a8d4; // 라벤더? 그레이 회색? #e6e6fa
+    border: 2px solid #c688fc; // 보라
     width: 100%;
     font-size: 15px;
   }

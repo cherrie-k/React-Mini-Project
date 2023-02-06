@@ -10,12 +10,15 @@ const ContactBodyBlock = styled.div`
   margin-top: 50px;
 
   #project-title {
-    font-size: 36px;
+    font-size: 40px;
     margin-left: 12%;
     //margin-right: 30%;
     margin-bottom: 15px;
     direction: ltr;
     min-width: 430px;
+
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
   }
 
   #clear-local {

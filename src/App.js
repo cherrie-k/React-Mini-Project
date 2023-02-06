@@ -9,11 +9,15 @@ import Contact from "./components/Contacts/Contact";
 import Todo from "./components/Todos/Todo";
 import About from "./components/About";
 
-//import "./App.css";
+import "./App.css";
 
 // 글로벌 스타일로 페이지 전체 설정 가능
 const GlobalStyle = createGlobalStyle`
-  body{ background: #e6e6fa;}
+  body{ 
+    background: #f1f1f1;  // #e6e6fa(연보라 eaeaf6); fff1f1(연핑크)}
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+  };  
 `;
 
 function App() {
