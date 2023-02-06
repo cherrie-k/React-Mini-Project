@@ -9,7 +9,7 @@ const TodoHeadBlock = styled.div`
   padding-top: 32px;
   padding-left: 32px;
   padding-right: 32px;
-  padding-bottom: 24px;
+  padding-bottom: 22px;
   border-bottom: 1px solid #e9ecef;
 
   h1 {
@@ -19,15 +19,15 @@ const TodoHeadBlock = styled.div`
   }
 
   .day {
-    margin-top: 4px;
+    margin-top: 3px;
     color: #868e96;
     font-size: 21px;
   }
 
   .tasks-left {
-    color: lightseagreen;
+    color: #00a870;
     font-size: 18px;
-    margin-top: 40px;
+    margin-top: 35px;
     font-weight: bold;
   }
 `;

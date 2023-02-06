@@ -4,7 +4,8 @@ import React from "react";
 import styled from "styled-components";
 
 const TodoTemplateBlock = styled.div`
-  width: 512px;
+  max-width: 520px;
+  min-width: 300px;
   height: 600px; /*height 좀 다름*/
 
   position: relative;
@@ -13,8 +14,8 @@ const TodoTemplateBlock = styled.div`
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1); // 이거 0.1 대신 0.04정도로도 바꿔보기
 
   margin: 0 auto; // auto를 통해 페이지 중앙에 나타나게 됨
-  margin-top: 50px;
-  margin-bottom: 32px;
+  margin-top: 42px;
+  margin-bottom: 10px;
 
   display: flex;
   flex-direction: column;

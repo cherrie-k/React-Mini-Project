@@ -9,7 +9,9 @@ import { createGlobalStyle } from "styled-components";
 
 // 글로벌 스타일로 페이지 전체 설정 가능
 const GlobalStyle = createGlobalStyle`
-  body{ background: pink;}
+  body{ 
+    background: #ddf7c3;// f9f2b3 f8f3d0 노랑 cef3b9  d6f5c5 연두
+  }   
 `;
 
 export default class Todo extends React.Component {

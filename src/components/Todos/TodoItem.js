@@ -9,33 +9,34 @@ const Remove = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: blue;
+  color: #a9b2ad;
   font-size: 24px;
   cursor: pointer;
-  opacity: 50%;
+  opacity: 70%;
   &:hover {
-    color: pink;
+    color: #ff8094;
   }
   display: none;
 `;
 
 const CheckCircle = styled.div`
-  width: 32px;
-  height: 32px;
+  width: 33px;
+  height: 33px;
   border-radius: 16px;
-  border: 1px solid red;
+  border: 1.6px solid #d2dbd6;
   font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 20px;
   cursor: pointer;
+
   // 끝나서 체크 된 애들
   ${(props) =>
     props.done &&
     css`
-      border: 1px solid pink;
-      color: pink;
+      border: 2px solid #76c69e;
+      color: #76c69e;
     `}
 `;
 
@@ -48,7 +49,6 @@ const TodoItemBlock = styled.div`
   &:hover {
     ${Remove} {
       display: initial; // 지우기?
-      opacity: 50%;
     }
   }
 `;

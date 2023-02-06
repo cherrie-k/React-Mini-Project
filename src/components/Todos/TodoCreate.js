@@ -6,12 +6,12 @@ import { MdAdd } from "react-icons/md";
 import { useTodoDispatch, useTodoNextId } from "./TodoContext";
 
 const CircleButton = styled.button`
-  background: blue; // 버튼 제일 기본색
+  background: #ff9eb1; // 버튼 제일 기본색
   &:hover {
-    background: yellow; // 버튼 눌리진 않았지만 hover일 때
+    background: #ffbfc8; // 버튼 눌리진 않았지만 hover일 때
   }
   &:active {
-    background: red;
+    background: #f292a2;
   }
 
   z-index: 5; // 요소들 겹칠 때 수직 위치 정해줌
@@ -38,12 +38,12 @@ const CircleButton = styled.button`
     props.open &&
     css`
       // 눌려서 X자 됐을 때 버튼 색
-      background: salmon;
+      background: #66cdaa;
       &:hover {
-        background: lime;
+        background: #99e6b3;
       }
       &:active {
-        background: red;
+        background: #66cdaa;
       }
       // 누르면 +아이콘을 45도 돌려서 x로 만들어줌
       transform: translate(-50%, 50%) rotate(45deg);
