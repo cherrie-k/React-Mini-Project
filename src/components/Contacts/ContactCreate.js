@@ -7,7 +7,7 @@ const ContactCreatePositioner = styled.div`
 `;
 
 const ContactCreateBlock = styled.div`
-  background: white;
+  background: #fff; //white
 
   display: flex;
   flex-direction: column;
@@ -27,12 +27,32 @@ const ContactCreateBlock = styled.div`
     margin-bottom: 15px;
     padding: 8px;
     font-size: 14px;
-    border: solid 1px gray;
-    border-radius: 10px;
+    border: solid 1px lightgray;
+    border-radius: 6px;
   }
 
   #create-button {
-    background-color: pink;
+    margin: 5px 30px;
+    padding: 10px 10px;
+    background: #fff; //white
+
+    border: 2px solid #d2a8d4;
+    border-radius: 10px;
+
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.25s;
+
+    &:hover {
+      box-shadow: inset 0 -3.25em 0 0 #d2a8d4;
+      color: #fff;
+    }
+    &:focus {
+      // 클릭시
+      box-shadow: inset 0 -3.25em 0 0 pink;
+      border-color: #fff;
+      color: #fff;
+    }
   }
 `;
 

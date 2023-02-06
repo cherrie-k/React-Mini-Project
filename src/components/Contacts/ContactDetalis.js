@@ -51,7 +51,7 @@ const ContactDetailsBlock = styled.div`
   }
 
   #description-box {
-    background: white;
+    background: #fff; //white
     padding: 0 20px;
     padding-top: 14px;
     padding-bottom: 10px;
@@ -64,15 +64,15 @@ const ContactDetailsBlock = styled.div`
 
   .buttons {
     float: right;
-    background: white;
+    background: #fff; //white
 
     padding: 6px; // 세로 가로
     font-size: 16px;
     border-radius: 20px;
     margin-right: 5px;
     cursor: pointer;
-    border: solid 2px lavender;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1); // 이거 0.1 대신 0.04정도로도 바꿔보기
+    border: solid 2px #fff; //white
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.14); // 이거 0.1 대신 0.04정도로도 바꿔보기
   }
 
   #button-edit {

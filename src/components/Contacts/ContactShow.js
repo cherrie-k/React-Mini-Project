@@ -7,7 +7,7 @@ const ContactShowPositioner = styled.div`
 `;
 
 const ContactShowBlock = styled.div`
-  background: white;
+  background: #fff; //white
   padding: 30px;
 
   width: 250px;
