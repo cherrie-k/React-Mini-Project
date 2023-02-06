@@ -7,7 +7,7 @@ function NavBar() {
   return (
     <nav className="nav">
       <Link to="/" className="site-title">
-        Cherrie's
+        CHERRIE's
       </Link>
       <ul>
         <CustomLink to="/colors">Color Dictionary</CustomLink>
