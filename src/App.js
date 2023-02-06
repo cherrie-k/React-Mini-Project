@@ -27,7 +27,9 @@ function App() {
       <NavBar />
       <div className="container">
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/*<Route path="/" element={<Home />} />    참고) 아직 Home 띄우는 곳 없음!!*/}
+          <Route path="/" element={<Contact />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/colors" element={<Contact />} />
           <Route path="/todo" element={<Todo />} />
           <Route path="/about" element={<About />} />
