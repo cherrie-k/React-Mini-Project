@@ -36,7 +36,7 @@ const ContactTemplateBlock = styled.div`
 
   min-width: 500px;
   width: 70%;
-  height: 30rem; /*height 좀 다름*/
+  height: 31rem; /*height 수정 필요*/
 
   border-radius: 24px; // 둥근 네모로 만들어줌. 얘랑 ContactShow랑 ContactCreate border radius 맞춰줘야 함!
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.05); // 이거 0.1 대신 0.04정도로도 바꿔보기

@@ -12,7 +12,7 @@ const ContactCreateBlock = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding: 30px;
+  padding: 26px;
 
   line-height: 0.8em;
 
@@ -21,6 +21,18 @@ const ContactCreateBlock = styled.div`
 
   h3 {
     color: gray;
+  }
+
+  .input-box {
+    margin-bottom: 15px;
+    padding: 8px;
+    font-size: 14px;
+    border: solid 1px gray;
+    border-radius: 10px;
+  }
+
+  #create-button {
+    background-color: pink;
   }
 `;
 
@@ -86,6 +98,7 @@ class ContactCreate extends Component {
           */}
               <div>
                 <input
+                  className="input-box"
                   required={true}
                   type="text"
                   name="name"
@@ -99,6 +112,7 @@ class ContactCreate extends Component {
               </div>
               <div>
                 <input
+                  className="input-box"
                   required={true}
                   type="text"
                   name="phone"
@@ -111,6 +125,7 @@ class ContactCreate extends Component {
               </div>
               <div>
                 <input
+                  className="input-box"
                   type="text"
                   name="desc"
                   placeholder="describe more (optional)"
@@ -120,7 +135,9 @@ class ContactCreate extends Component {
                 />
               </div>
             </p>
-            <button onClick={this.handleClick}>Create</button>
+            <button id="create-button" onClick={this.handleClick}>
+              Create
+            </button>
           </ContactCreateBlock>
         </ContactCreatePositioner>
       </div>

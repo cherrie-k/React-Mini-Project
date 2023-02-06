@@ -25,7 +25,7 @@ const ContactDetailsBlock = styled.div`
   h3 {
     // "Details"
     color: gray;
-    font-size: 25px;
+    font-size: 20px;
     margin: 9px;
     margin-left: -7px;
   }
@@ -52,7 +52,9 @@ const ContactDetailsBlock = styled.div`
 
   #description-box {
     background: white;
-    padding: 10px 20px;
+    padding: 0 20px;
+    padding-top: 14px;
+    padding-bottom: 10px;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.05); // 이거 0.1 대신 0.04정도로도 바꿔보기
     border-radius: 8px;
   }
@@ -60,9 +62,38 @@ const ContactDetailsBlock = styled.div`
   #desc-optional {
   }
 
-  #button-edit {
+  .buttons {
+    float: right;
+    background: white;
+
+    padding: 6px; // 세로 가로
+    font-size: 16px;
+    border-radius: 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    border: solid 2px lavender;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1); // 이거 0.1 대신 0.04정도로도 바꿔보기
   }
+
+  #button-edit {
+    width: 70px;
+    margin-right: 20px;
+  }
+
   #button-remove {
+    width: 90px;
+  }
+
+  .edit-inputs {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .input-form {
+    width: 90%;
+    padding: 8px;
+    border-radius: 12px;
+    border: solid 2px gainsboro;
   }
 `;
 
@@ -167,9 +198,10 @@ class ContactDetails extends Component {
     );
 
     const edit = (
-      <div>
+      <div className="edit-inputs">
         <p>
           <input
+            className="input-form"
             required={true}
             type="text"
             name="name"
@@ -180,6 +212,7 @@ class ContactDetails extends Component {
         </p>
         <p>
           <input
+            className="input-form"
             required={true}
             type="text"
             name="phone"
@@ -192,6 +225,7 @@ class ContactDetails extends Component {
         </p>
         <p>
           <input
+            className="input-form"
             type="text"
             name="desc"
             placeholder="describe more (optional)"
@@ -224,10 +258,18 @@ class ContactDetails extends Component {
           <h3>Details</h3>
           {this.props.isSelected ? view : blank}
           <p>
-            <button onClick={this.handleToggle} id="button-edit">
+            <button
+              className="buttons"
+              onClick={this.handleToggle}
+              id="button-edit"
+            >
               {this.state.isEdit ? "OK" : "Edit"}
             </button>
-            <button onClick={this.props.onRemove} id="button-remove">
+            <button
+              className="buttons"
+              onClick={this.props.onRemove}
+              id="button-remove"
+            >
               Remove
             </button>
           </p>
