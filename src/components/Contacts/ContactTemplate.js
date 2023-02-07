@@ -55,7 +55,7 @@ function ContactTemplate({ children }) {
         <ContactTemplateBlock>{children}</ContactTemplateBlock>
         <div id="clear-local">
           To go back to default state, press F12 and type in{" "}
-          <samp>localStorage.clear();</samp> in console
+          <code>localStorage.clear();</code> in console
         </div>
       </ContactBodyBlock>
     </div>

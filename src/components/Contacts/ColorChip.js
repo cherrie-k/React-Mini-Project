@@ -55,6 +55,7 @@ const ColorChipBlock = styled.div`
     display: flex;
     justify-content: center;
     //align-items: center;
+    margin-top: 100px;
     background: linear-gradient(-45deg, #ffff00, #f8c0ce, #5cf0f8, #fff700);
     background-size: 400% 400%;
     animation: gradient 5s ease infinite;

@@ -24,6 +24,43 @@ const ContactCreateBlock = styled.div`
     color: #da7eff;
   }
 
+  #pulse-icon {
+    display: inline-block;
+
+    border-radius: 50%;
+    background: rgba(232, 173, 255, 0.8);
+    box-shadow: 0 0 0 rgba(232, 173, 255, 0.4);
+
+    animation: pulseIcon 1.7s infinite;
+  }
+
+  @-webkit-keyframes pulseIcon {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(232, 173, 255, 0.4);
+    }
+    70% {
+      -webkit-box-shadow: 0 0 0 26px rgba(232, 173, 255, 0);
+    }
+    100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(28, 180, 105, 0);
+    }
+  }
+
+  @keyframes pulseIcon {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba(232, 173, 255, 0.4);
+      box-shadow: 0 0 0 0 rgba(232, 173, 255, 0.4);
+    }
+    70% {
+      -moz-box-shadow: 0 0 0 26px rgba(232, 173, 255, 0);
+      box-shadow: 0 0 0 26px rgba(232, 173, 255, 0);
+    }
+    100% {
+      -moz-box-shadow: 0 0 0 0 rgba(232, 173, 255, 0);
+      box-shadow: 0 0 0 0 rgba(232, 173, 255, 0);
+    }
+  }
+
   .input-box {
     margin-bottom: 15px;
     padding: 8px;
@@ -112,8 +149,8 @@ class ContactCreate extends Component {
       <div>
         <ContactCreatePositioner>
           <ContactCreateBlock>
-            <h3>
-              Add a New Color <IoColorPalette />
+            <h3 className="pulse-text">
+              Add a New Color <IoColorPalette id="pulse-icon" />
             </h3>
             <p>
               {/*밑에서 ref가 있는 코드 덕분에.. 정보 입력 후 제출이 끝나도 마우스 포인터표시? 포커스가 여전히 input 박스 안에 있을 수 있다. \
