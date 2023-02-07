@@ -6,16 +6,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 // browser를 위한 router를 임포트해옴. 이거로 App 컴포넌트 통으로 감싸주기.
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
-import "./App.css";
+// import "./App.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <HashRouter basename="/">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App />
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
