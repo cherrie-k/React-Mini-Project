@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cherrie-k/React-Mini-Project.git/static/css/main.e5e6cc54.css",
+    "main.js": "/cherrie-k/React-Mini-Project.git/static/js/main.37d46569.js",
+    "static/js/787.72fa51a9.chunk.js": "/cherrie-k/React-Mini-Project.git/static/js/787.72fa51a9.chunk.js",
+    "index.html": "/cherrie-k/React-Mini-Project.git/index.html",
+    "main.e5e6cc54.css.map": "/cherrie-k/React-Mini-Project.git/static/css/main.e5e6cc54.css.map",
+    "main.37d46569.js.map": "/cherrie-k/React-Mini-Project.git/static/js/main.37d46569.js.map",
+    "787.72fa51a9.chunk.js.map": "/cherrie-k/React-Mini-Project.git/static/js/787.72fa51a9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e5e6cc54.css",
+    "static/js/main.37d46569.js"
+  ]
+}
