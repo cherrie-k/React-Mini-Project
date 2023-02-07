@@ -9,7 +9,7 @@ const TodoTemplateBlock = styled.div`
   height: 600px; /*height 좀 다름*/
 
   position: relative;
-  background: white;
+  background: #fff;
   border-radius: 16px; // 둥근 네모로 만들어줌. 얘랑 TodoCreate.js의 InsertForm의 border radius랑 맞춰줘야함!
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1); // 이거 0.1 대신 0.04정도로도 바꿔보기
 

@@ -5,20 +5,16 @@ import TodoList from "./TodoList";
 import TodoCreate from "./TodoCreate";
 import { TodoProvider } from "./TodoContext";
 
-import { createGlobalStyle } from "styled-components";
+// 페이지별로 body color 다르게 해줌
+import setBodyColor from "../../setBodyColor";
 
-// 글로벌 스타일로 페이지 전체 설정 가능
-const GlobalStyle = createGlobalStyle`
-  body{ 
-    background: #ddf7c3;// f9f2b3 f8f3d0 노랑 cef3b9  d6f5c5 연두
-  }   
-`;
+// 색깔 정신 없는 애들 고치기
 
 export default class Todo extends React.Component {
   render() {
+    setBodyColor({ color: "#ddf7c3" });
     return (
       <TodoProvider>
-        <GlobalStyle />
         <TodoTemplate>
           <TodoHead />
           <TodoList />

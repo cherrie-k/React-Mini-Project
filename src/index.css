@@ -13,3 +13,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+:root {
+  /* --bodyImage: "img/sky4.jpg";*/
+  --bodyColor: "#f1f1f1";
+}
+
+body {
+  /* background-image: var(--bodyImage); */
+  background: var(--bodyColor);
+}

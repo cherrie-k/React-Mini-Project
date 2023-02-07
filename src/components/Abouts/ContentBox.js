@@ -17,7 +17,7 @@ const ContentBoxBlock = styled.div`
   margin: 10px auto;
   margin-top: 32px;
   padding: 60px 70px;
-  background-color: rgba(255, 255, 255, 0.92);
+  background-color: rgba(255, 255, 255, 0.85);
 
   #box1 {
     grid-area: box1;

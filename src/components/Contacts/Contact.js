@@ -7,6 +7,8 @@ import { ColorChipItem } from "./ColorChip";
 
 import update from "react-addons-update";
 import ContactShow from "./ContactShow";
+// 페이지별로 body color 다르게 해줌
+import setBodyColor from "../../setBodyColor";
 
 export default class Contact extends React.Component {
   constructor(props) {
@@ -124,6 +126,7 @@ export default class Contact extends React.Component {
   }
 
   render() {
+    setBodyColor({ color: "#f1f1f1" });
     const mapToComponents = (data) => {
       data.sort((a, b) => {
         return a.name > b.name;
