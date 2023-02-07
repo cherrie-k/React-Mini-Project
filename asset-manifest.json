@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/React-Mini-Project/static/css/main.e5e6cc54.css",
-    "main.js": "/React-Mini-Project/static/js/main.9a7b628e.js",
+    "main.css": "/React-Mini-Project/static/css/main.e2f8dbc3.css",
+    "main.js": "/React-Mini-Project/static/js/main.892ae2d2.js",
     "static/js/787.72fa51a9.chunk.js": "/React-Mini-Project/static/js/787.72fa51a9.chunk.js",
     "index.html": "/React-Mini-Project/index.html",
-    "main.e5e6cc54.css.map": "/React-Mini-Project/static/css/main.e5e6cc54.css.map",
-    "main.9a7b628e.js.map": "/React-Mini-Project/static/js/main.9a7b628e.js.map",
+    "main.e2f8dbc3.css.map": "/React-Mini-Project/static/css/main.e2f8dbc3.css.map",
+    "main.892ae2d2.js.map": "/React-Mini-Project/static/js/main.892ae2d2.js.map",
     "787.72fa51a9.chunk.js.map": "/React-Mini-Project/static/js/787.72fa51a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e5e6cc54.css",
-    "static/js/main.9a7b628e.js"
+    "static/css/main.e2f8dbc3.css",
+    "static/js/main.892ae2d2.js"
   ]
 }
