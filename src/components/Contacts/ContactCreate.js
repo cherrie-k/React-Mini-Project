@@ -24,7 +24,7 @@ const ContactCreateBlock = styled.div`
     color: #da7eff;
   }
 
-  #pulse-icon {
+  .pulse-icon {
     display: inline-block;
 
     border-radius: 50%;
@@ -150,7 +150,7 @@ class ContactCreate extends Component {
         <ContactCreatePositioner>
           <ContactCreateBlock>
             <h3 className="pulse-text">
-              Add a New Color <IoColorPalette id="pulse-icon" />
+              Add a New Color <IoColorPalette className="pulse-icon" />
             </h3>
             <p>
               {/*밑에서 ref가 있는 코드 덕분에.. 정보 입력 후 제출이 끝나도 마우스 포인터표시? 포커스가 여전히 input 박스 안에 있을 수 있다. \
