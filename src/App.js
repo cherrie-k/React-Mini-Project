@@ -7,7 +7,7 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Contact from "./components/Contacts/Contact";
 import Todo from "./components/Todos/Todo";
-import About from "./components/About";
+import About from "./components/Abouts/About";
 
 import "./App.css";
 
