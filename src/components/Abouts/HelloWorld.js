@@ -18,9 +18,9 @@ const TextAnimationBlock = styled.div`
     cursor: pointer;
 
     background: conic-gradient(
-      #ccccff 22%,
-      #fad8d7 22%,
-      #f7e98e 33%,
+      #c6c6ff 22%,
+      #ffcccb 22%,
+      #ffe670 33%,
       #84ed9a 33%,
       #64e986 62%,
       #ffb9c7 62%,
@@ -53,7 +53,7 @@ const TextAnimationBlock = styled.div`
     }
     100% {
       background-size: 325%;
-      background-position: -15em -4em;
+      background-position: -15em -1em;
     }
   }
 
@@ -68,7 +68,7 @@ const TextAnimationBlock = styled.div`
     }
     100% {
       background-size: 30%;
-      background-position: 0.2em 0.1em;
+      background-position: 2em 0.1em;
     }
   }
 `;
