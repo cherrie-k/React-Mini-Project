@@ -126,7 +126,7 @@ export default class Contact extends React.Component {
   }
 
   render() {
-    setBodyColor({ color: "#f1f1f1" });
+    setBodyColor({ color: "linear-gradient( #f1eef6 , white)" }); //#f1f1f1
     const mapToComponents = (data) => {
       data.sort((a, b) => {
         return a.name > b.name;

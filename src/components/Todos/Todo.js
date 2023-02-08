@@ -12,7 +12,7 @@ import setBodyColor from "../../setBodyColor";
 
 export default class Todo extends React.Component {
   render() {
-    setBodyColor({ color: "#ddf7c3" });
+    setBodyColor({ color: "linear-gradient(#fff8d6, #cedfbd)" });
     return (
       <TodoProvider>
         <TodoTemplate>
