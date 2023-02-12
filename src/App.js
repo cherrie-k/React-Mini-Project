@@ -8,7 +8,7 @@ import Home from "./components/Home";
 import Contact from "./components/Contacts/Contact";
 import Todo from "./components/Todos/Todo";
 import About from "./components/Abouts/About";
-
+import PracticeCss from "./components/CssPractice/PracticeCss";
 // import "./App.css";
 
 // 글로벌 스타일로 페이지 전체 설정 가능
@@ -41,6 +41,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/colors" element={<Contact />} />
           <Route path="/todo" element={<Todo />} />
+          <Route path="/css" element={<PracticeCss />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </div>

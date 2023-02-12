@@ -12,6 +12,7 @@ function NavBar() {
       <ul>
         <CustomLink to="/colors">Color Dictionary</CustomLink>
         <CustomLink to="/todo">Todo List</CustomLink>
+        <CustomLink to="/css">Css</CustomLink>
         <CustomLink to="/about">About</CustomLink>
       </ul>
     </nav>
